@@ -25,11 +25,11 @@ fun LevelSelectionScreen(
     viewModel: SharedQuizViewModel = viewModel()
 ) {
     val levels = listOf(
-        "Level 1: 1-10",
-        "Level 2: 11-50",
-        "Level 3: 51-100",
-        "Level 4: 101-1000",
-        "Level 5: 1001-10000"
+        "Level 1: Bilangan 1-10",
+        "Level 2: Bilangan 11-50",
+        "Level 3: Bilangan 51-100",
+        "Level 4: Bilangan 101-1000",
+        "Level 5: Bilangan 1001-10000"
     )
 
     // Define number ranges for each level
@@ -44,7 +44,7 @@ fun LevelSelectionScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Select a Level") }
+                title = { Text("Pilih Level") }
             )
         }
     ) { padding ->

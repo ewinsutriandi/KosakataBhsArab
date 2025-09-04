@@ -4,7 +4,11 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -28,14 +32,60 @@ fun QuizScreen(
     val snackbarHostState = remember { SnackbarHostState() }
     var snackbarBgColor by remember { mutableStateOf(Color.Gray) }
     var snackbarFgColor by remember { mutableStateOf(Color.White) }
+    var showExitDialog by remember { mutableStateOf(false) }
+    var showSummaryDialog by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
     quizLevel?.let { level ->
+        // Show summary dialog if quiz is complete
         if (currentQuestionIndex >= level.questions.size) {
-            onQuizCompleted(level.levelId, correctAnswers, incorrectAnswers)
+            showSummaryDialog = true
+        }
+
+        // Summary dialog
+        if (showSummaryDialog) {
+            AlertDialog(
+                onDismissRequest = { /* Prevent dismissal by clicking outside */ },
+                title = {
+                    Text(
+                        text = "${((correctAnswers.toFloat() / level.totalQuestions) * 100).toInt()}%",
+                        style = MaterialTheme.typography.headlineLarge.copy(fontSize = 36.sp),
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                },
+                text = {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            text = "Benar: $correctAnswers soal",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                        Text(
+                            text = "Salah: $incorrectAnswers soal",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            showSummaryDialog = false
+                            onQuizCompleted(level.levelId, correctAnswers, incorrectAnswers)
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Ke daftar level")
+                    }
+                },
+                dismissButton = {}
+            )
             return@let
         }
 
+        // Quiz UI (shown only if quiz is not complete)
         val currentQuestion = level.questions[currentQuestionIndex]
 
         Scaffold(
@@ -49,7 +99,7 @@ fun QuizScreen(
                     Snackbar(
                         snackbarData = data,
                         containerColor = snackbarBgColor,
-                        contentColor = snackbarFgColor
+                        contentColor = snackbarFgColor,
                     )
                 }
             }
@@ -73,7 +123,7 @@ fun QuizScreen(
                     Card {
                         Text(
                             text = level.questions[targetIndex].questionText,
-                            style = MaterialTheme.typography.headlineLarge.copy(fontSize = 51.sp), // Larger font
+                            style = MaterialTheme.typography.headlineLarge.copy(fontSize = 51.sp),
                             textAlign = TextAlign.Center,
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -108,7 +158,9 @@ fun QuizScreen(
                                     }
                                     scope.launch {
                                         snackbarHostState.showSnackbar(
-                                            message = if (isCorrect) "Correct!" else "Incorrect!"
+                                            message = if (isCorrect) "Benar!" else "Salah! ${currentQuestion.questionText} = ${currentQuestion.correctAnswer}",
+                                            duration = SnackbarDuration.Short,
+                                            
                                         )
                                     }
                                     currentQuestionIndex++
@@ -117,7 +169,7 @@ fun QuizScreen(
                             ) {
                                 Text(
                                     text = choice,
-                                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 27.sp), // Larger font
+                                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 27.sp),
                                     textAlign = TextAlign.Center
                                 )
                             }
@@ -135,11 +187,50 @@ fun QuizScreen(
 
                 // Score display
                 Text(
-                    text = "Correct: $correctAnswers | Incorrect: $incorrectAnswers",
+                    text = "Benar: $correctAnswers | Salah: $incorrectAnswers",
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 8.dp)
                 )
+
+                // Close button
+                IconButton(
+                    onClick = { showExitDialog = true },
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.primary, CircleShape)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Close,
+                        contentDescription = "Close Quiz",
+                        tint = MaterialTheme.colorScheme.onPrimary
+                    )
+                }
             }
+        }
+
+        // Exit confirmation dialog
+        if (showExitDialog) {
+            AlertDialog(
+                onDismissRequest = { showExitDialog = false },
+                title = { Text("Hentikan sesi") },
+                text = { Text("Yakin ingin keluar dan menghentikan sesi permainan kali ini?") },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            showExitDialog = false
+                            onQuizCompleted(level.levelId, correctAnswers, incorrectAnswers)
+                        }
+                    ) {
+                        Text("Keluar")
+                    }
+                },
+                dismissButton = {
+                    Button(
+                        onClick = { showExitDialog = false }
+                    ) {
+                        Text("Batal")
+                    }
+                }
+            )
         }
     } ?: run {
         Box(
