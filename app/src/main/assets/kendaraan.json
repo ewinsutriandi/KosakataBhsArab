@@ -1,0 +1,132 @@
+{
+  "version": "1.1",
+  "transliteration_standard": "Indonesian-style",
+  "vehicles": [
+    {
+      "id": "vehicle001",
+      "unicode": "U+1F697",
+      "emoji": "🚗",
+      "image_path": null,
+      "category": "Land",
+      "names": {
+        "english": "Car",
+        "indonesian": "Mobil",
+        "arabic_vocalized": "سَيَّارَةٌ",
+        "arabic_unvocalized": "سيارة",
+        "arabic_transliteration_indonesian": "Sayyara"
+      }
+    },
+    {
+      "id": "vehicle002",
+      "unicode": "U+1F68C",
+      "emoji": "🚌",
+      "image_path": null,
+      "category": "Land",
+      "names": {
+        "english": "Bus",
+        "indonesian": "Bus",
+        "arabic_vocalized": "حَافِلَةٌ",
+        "arabic_unvocalized": "حافلة",
+        "arabic_transliteration_indonesian": "Hafila"
+      }
+    },
+    {
+      "id": "vehicle003",
+      "unicode": "U+1F6B2",
+      "emoji": "🚲",
+      "image_path": null,
+      "category": "Land",
+      "names": {
+        "english": "Bicycle",
+        "indonesian": "Sepeda",
+        "arabic_vocalized": "دَرَّاجَةٌ",
+        "arabic_unvocalized": "دراجة",
+        "arabic_transliteration_indonesian": "Darraja"
+      }
+    },
+    {
+      "id": "vehicle004",
+      "unicode": "U+1F682",
+      "emoji": "🚂",
+      "image_path": null,
+      "category": "Land",
+      "names": {
+        "english": "Train",
+        "indonesian": "Kereta Api",
+        "arabic_vocalized": "قِطَارٌ",
+        "arabic_unvocalized": "قطار",
+        "arabic_transliteration_indonesian": "Qitar"
+      }
+    },
+    {
+      "id": "vehicle005",
+      "unicode": "U+1F6A2",
+      "emoji": "🚢",
+      "image_path": null,
+      "category": "Water",
+      "names": {
+        "english": "Boat",
+        "indonesian": "Perahu",
+        "arabic_vocalized": "قَارِبٌ",
+        "arabic_unvocalized": "قارب",
+        "arabic_transliteration_indonesian": "Qarib"
+      }
+    },
+    {
+      "id": "vehicle006",
+      "unicode": "U+1F6E9",
+      "emoji": "🛩️",
+      "image_path": null,
+      "category": "Air",
+      "names": {
+        "english": "Airplane",
+        "indonesian": "Pesawat",
+        "arabic_vocalized": "طَائِرَةٌ",
+        "arabic_unvocalized": "طائرة",
+        "arabic_transliteration_indonesian": "Taira"
+      }
+    },
+    {
+      "id": "vehicle007",
+      "unicode": "U+1F6A2",
+      "emoji": "🚢",
+      "image_path": null,
+      "category": "Water",
+      "names": {
+        "english": "Ship",
+        "indonesian": "Kapal",
+        "arabic_vocalized": "سَفِينَةٌ",
+        "arabic_unvocalized": "سفينة",
+        "arabic_transliteration_indonesian": "Safina"
+      }
+    },
+    {
+      "id": "vehicle008",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Water",
+      "names": {
+        "english": "Vessel",
+        "indonesian": "Kapal",
+        "arabic_vocalized": "مَرْكَبٌ",
+        "arabic_unvocalized": "مركب",
+        "arabic_transliteration_indonesian": "Markab"
+      }
+    },
+    {
+      "id": "vehicle009",
+      "unicode": "U+1F3CD",
+      "emoji": "🏍️",
+      "image_path": null,
+      "category": "Land",
+      "names": {
+        "english": "Motorcycle",
+        "indonesian": "Sepeda Motor",
+        "arabic_vocalized": "دَرَّاجَةٌ نَارِيَّةٌ",
+        "arabic_unvocalized": "دراجة نارية",
+        "arabic_transliteration_indonesian": "Darraja Nariyya"
+      }
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "version": "1.1",
+  "transliteration_standard": "Indonesian-style",
+  "body_parts": [
+    {
+      "id": "bodypart001",
+      "unicode": "U+1F9B4",
+      "emoji": "🦴",
+      "image_path": null,
+      "category": "Skeleton",
+      "names": {
+        "english": "Bone",
+        "indonesian": "Tulang",
+        "arabic_vocalized": "عَظْمٌ",
+        "arabic_unvocalized": "عظم",
+        "arabic_transliteration_indonesian": "Adhm"
+      }
+    },
+    {
+      "id": "bodypart002",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Torso",
+      "names": {
+        "english": "Chest",
+        "indonesian": "Dada",
+        "arabic_vocalized": "صَدْرٌ",
+        "arabic_unvocalized": "صدر",
+        "arabic_transliteration_indonesian": "Sadr"
+      }
+    },
+    {
+      "id": "bodypart003",
+      "unicode": "U+1F440",
+      "emoji": "👀",
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Eyes",
+        "indonesian": "Mata",
+        "arabic_vocalized": "عَيْنَانِ",
+        "arabic_unvocalized": "عينان",
+        "arabic_transliteration_indonesian": "Ainan"
+      }
+    },
+    {
+      "id": "bodypart004",
+      "unicode": "U+1F442",
+      "emoji": "👂",
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Ear",
+        "indonesian": "Telinga",
+        "arabic_vocalized": "أُذُنٌ",
+        "arabic_unvocalized": "أذن",
+        "arabic_transliteration_indonesian": "Udzun"
+      }
+    },
+    {
+      "id": "bodypart005",
+      "unicode": "U+1F9B6",
+      "emoji": "🦶",
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Foot",
+        "indonesian": "Kaki",
+        "arabic_vocalized": "قَدَمٌ",
+        "arabic_unvocalized": "قدم",
+        "arabic_transliteration_indonesian": "Qadam"
+      }
+    },
+    {
+      "id": "bodypart006",
+      "unicode": "U+1F444",
+      "emoji": "👄",
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Mouth",
+        "indonesian": "Mulut",
+        "arabic_vocalized": "فَمٌ",
+        "arabic_unvocalized": "فم",
+        "arabic_transliteration_indonesian": "Fam"
+      }
+    },
+    {
+      "id": "bodypart007",
+      "unicode": "U+1F443",
+      "emoji": "👃",
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Nose",
+        "indonesian": "Hidung",
+        "arabic_vocalized": "أَنْفٌ",
+        "arabic_unvocalized": "أنف",
+        "arabic_transliteration_indonesian": "Anf"
+      }
+    },
+    {
+      "id": "bodypart008",
+      "unicode": "U+1F4AA",
+      "emoji": "💪",
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Arm",
+        "indonesian": "Lengan",
+        "arabic_vocalized": "ذِرَاعٌ",
+        "arabic_unvocalized": "ذراع",
+        "arabic_transliteration_indonesian": "Dhirra"
+      }
+    },
+    {
+      "id": "bodypart009",
+      "unicode": "U+1F91A",
+      "emoji": "🤚",
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Hand",
+        "indonesian": "Tangan",
+        "arabic_vocalized": "يَدٌ",
+        "arabic_unvocalized": "يد",
+        "arabic_transliteration_indonesian": "Yad"
+      }
+    },
+    {
+      "id": "bodypart010",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Head",
+        "indonesian": "Kepala",
+        "arabic_vocalized": "رَأْسٌ",
+        "arabic_unvocalized": "رأس",
+        "arabic_transliteration_indonesian": "Ras"
+      }
+    },
+    {
+      "id": "bodypart011",
+      "unicode": "U+1F9B5",
+      "emoji": "🦵",
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Leg",
+        "indonesian": "Kaki",
+        "arabic_vocalized": "سَاقٌ",
+        "arabic_unvocalized": "ساق",
+        "arabic_transliteration_indonesian": "Saq"
+      }
+    },
+    {
+      "id": "bodypart012",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Torso",
+      "names": {
+        "english": "Stomach",
+        "indonesian": "Perut",
+        "arabic_vocalized": "بَطْنٌ",
+        "arabic_unvocalized": "بطن",
+        "arabic_transliteration_indonesian": "Bathn"
+      }
+    },
+    {
+      "id": "bodypart013",
+      "unicode": "U+1F445",
+      "emoji": "👅",
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Tongue",
+        "indonesian": "Lidah",
+        "arabic_vocalized": "لِسَانٌ",
+        "arabic_unvocalized": "لسان",
+        "arabic_transliteration_indonesian": "Lisan"
+      }
+    },
+    {
+      "id": "bodypart014",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Forehead",
+        "indonesian": "Dahi",
+        "arabic_vocalized": "جَبْهَةٌ",
+        "arabic_unvocalized": "جبهة",
+        "arabic_transliteration_indonesian": "Jabha"
+      }
+    },
+    {
+      "id": "bodypart015",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Finger",
+        "indonesian": "Jari",
+        "arabic_vocalized": "إِصْبَعٌ",
+        "arabic_unvocalized": "إصبع",
+        "arabic_transliteration_indonesian": "Isba"
+      }
+    },
+    {
+      "id": "bodypart016",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Head",
+      "names": {
+        "english": "Hair",
+        "indonesian": "Rambut",
+        "arabic_vocalized": "شَعْرٌ",
+        "arabic_unvocalized": "شعر",
+        "arabic_transliteration_indonesian": "Shaar"
+      }
+    },
+    {
+      "id": "bodypart017",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Limbs",
+      "names": {
+        "english": "Knee",
+        "indonesian": "Lutut",
+        "arabic_vocalized": "رُكْبَةٌ",
+        "arabic_unvocalized": "ركبة",
+        "arabic_transliteration_indonesian": "Rukba"
+      }
+    }
+  ]
+}

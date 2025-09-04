@@ -1,0 +1,244 @@
+{
+  "version": "1.0",
+  "transliteration_standard": "Indonesian-style",
+  "fruits": [
+    {
+      "id": "fruit001",
+      "unicode": "U+1F34E",
+      "emoji": "🍎",
+      "image_path": null,
+      "category": "Pome",
+      "names": {
+        "english": "Apple",
+        "indonesian": "Apel",
+        "arabic_vocalized": "تُفَّاحَةٌ",
+        "arabic_unvocalized": "تفاحة",
+        "arabic_transliteration_indonesian": "Tuffahah"
+      }
+    },
+    {
+      "id": "fruit002",
+      "unicode": "U+1F34F",
+      "emoji": "🍏",
+      "image_path": null,
+      "category": "Pome",
+      "names": {
+        "english": "Green Apple",
+        "indonesian": "Apel Hijau",
+        "arabic_vocalized": "تُفَّاحَةٌ خَضْرَاءُ",
+        "arabic_unvocalized": "تفاحة خضراء",
+        "arabic_transliteration_indonesian": "Tuffahah Khadra"
+      }
+    },
+    {
+      "id": "fruit003",
+      "unicode": "U+1F34A",
+      "emoji": "🍊",
+      "image_path": null,
+      "category": "Citrus",
+      "names": {
+        "english": "Orange",
+        "indonesian": "Jeruk",
+        "arabic_vocalized": "بُرْتُقَالَةٌ",
+        "arabic_unvocalized": "برتقالة",
+        "arabic_transliteration_indonesian": "Burtuqalah"
+      }
+    },
+    {
+      "id": "fruit004",
+      "unicode": "U+1F34B",
+      "emoji": "🍋",
+      "image_path": null,
+      "category": "Citrus",
+      "names": {
+        "english": "Lemon",
+        "indonesian": "Lemon",
+        "arabic_vocalized": "لَيْمُونَةٌ",
+        "arabic_unvocalized": "ليمونة",
+        "arabic_transliteration_indonesian": "Laimunah"
+      }
+    },
+    {
+      "id": "fruit005",
+      "unicode": "U+1F34C",
+      "emoji": "🍌",
+      "image_path": null,
+      "category": "Tropical",
+      "names": {
+        "english": "Banana",
+        "indonesian": "Pisang",
+        "arabic_vocalized": "مَوْزَةٌ",
+        "arabic_unvocalized": "موزة",
+        "arabic_transliteration_indonesian": "Mauzah"
+      }
+    },
+    {
+      "id": "fruit006",
+      "unicode": "U+1F349",
+      "emoji": "🍉",
+      "image_path": null,
+      "category": "Melon",
+      "names": {
+        "english": "Watermelon",
+        "indonesian": "Semangka",
+        "arabic_vocalized": "بَطِّيخَةٌ",
+        "arabic_unvocalized": "بطيخة",
+        "arabic_transliteration_indonesian": "Baththikhah"
+      }
+    },
+    {
+      "id": "fruit007",
+      "unicode": "U+1F347",
+      "emoji": "🍇",
+      "image_path": null,
+      "category": "Berry",
+      "names": {
+        "english": "Grapes",
+        "indonesian": "Anggur",
+        "arabic_vocalized": "عِنَبٌ",
+        "arabic_unvocalized": "عنب",
+        "arabic_transliteration_indonesian": "Inab"
+      }
+    },
+    {
+      "id": "fruit008",
+      "unicode": "U+1F353",
+      "emoji": "🍓",
+      "image_path": null,
+      "category": "Berry",
+      "names": {
+        "english": "Strawberry",
+        "indonesian": "Stroberi",
+        "arabic_vocalized": "فَرَاوِلَةٌ",
+        "arabic_unvocalized": "فراولة",
+        "arabic_transliteration_indonesian": "Farawilah"
+      }
+    },
+    {
+      "id": "fruit009",
+      "unicode": "U+1F348",
+      "emoji": "🍈",
+      "image_path": null,
+      "category": "Melon",
+      "names": {
+        "english": "Melon",
+        "indonesian": "Melon",
+        "arabic_vocalized": "شَمَّامَةٌ",
+        "arabic_unvocalized": "شمامة",
+        "arabic_transliteration_indonesian": "Shammamah"
+      }
+    },
+    {
+      "id": "fruit010",
+      "unicode": "U+1F352",
+      "emoji": "🍒",
+      "image_path": null,
+      "category": "Stone Fruit",
+      "names": {
+        "english": "Cherries",
+        "indonesian": "Ceri",
+        "arabic_vocalized": "كَرَزٌ",
+        "arabic_unvocalized": "كرز",
+        "arabic_transliteration_indonesian": "Karaz"
+      }
+    },
+    {
+      "id": "fruit011",
+      "unicode": "U+1F351",
+      "emoji": "🍑",
+      "image_path": null,
+      "category": "Stone Fruit",
+      "names": {
+        "english": "Peach",
+        "indonesian": "Persik",
+        "arabic_vocalized": "خَوْخَةٌ",
+        "arabic_unvocalized": "خوخة",
+        "arabic_transliteration_indonesian": "Khawkhah"
+      }
+    },
+    {
+      "id": "fruit012",
+      "unicode": "U+1F34D",
+      "emoji": "🍍",
+      "image_path": null,
+      "category": "Tropical",
+      "names": {
+        "english": "Pineapple",
+        "indonesian": "Nanas",
+        "arabic_vocalized": "أَنَانَاسٌ",
+        "arabic_unvocalized": "أناناس",
+        "arabic_transliteration_indonesian": "Ananas"
+      }
+    },
+    {
+      "id": "fruit013",
+      "unicode": "U+1F96D",
+      "emoji": "🥭",
+      "image_path": null,
+      "category": "Tropical",
+      "names": {
+        "english": "Mango",
+        "indonesian": "Mangga",
+        "arabic_vocalized": "مَانْجُو",
+        "arabic_unvocalized": "مانجو",
+        "arabic_transliteration_indonesian": "Manju"
+      }
+    },
+    {
+      "id": "fruit014",
+      "unicode": "U+1F95D",
+      "emoji": "🥝",
+      "image_path": null,
+      "category": "Tropical",
+      "names": {
+        "english": "Kiwi",
+        "indonesian": "Kiwi",
+        "arabic_vocalized": "كِيوِي",
+        "arabic_unvocalized": "كيوي",
+        "arabic_transliteration_indonesian": "Kiwi"
+      }
+    },
+    {
+      "id": "fruit015",
+      "unicode": "U+1F345",
+      "emoji": "🍅",
+      "image_path": null,
+      "category": "Berry",
+      "names": {
+        "english": "Tomato",
+        "indonesian": "Tomat",
+        "arabic_vocalized": "طَمَاطِمٌ",
+        "arabic_unvocalized": "طماطم",
+        "arabic_transliteration_indonesian": "Thamathim"
+      }
+    },
+    {
+      "id": "fruit016",
+      "unicode": "U+1FAD0",
+      "emoji": "🫐",
+      "image_path": null,
+      "category": "Berry",
+      "names": {
+        "english": "Blueberries",
+        "indonesian": "Bluberi",
+        "arabic_vocalized": "تُوتٌ أَزْرَقُ",
+        "arabic_unvocalized": "توت أزرق",
+        "arabic_transliteration_indonesian": "Tut Azraq"
+      }
+    },
+    {
+      "id": "fruit017",
+      "unicode": "U+1FAD2",
+      "emoji": "🫒",
+      "image_path": null,
+      "category": "Drupe",
+      "names": {
+        "english": "Olive",
+        "indonesian": "Zaitun",
+        "arabic_vocalized": "زَيْتُونَةٌ",
+        "arabic_unvocalized": "زيتونة",
+        "arabic_transliteration_indonesian": "Zaitunah"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "transliteration_standard": "Indonesian-style",
+  "clothing": [
+    {
+      "id": "clothing001",
+      "unicode": "U+1F455",
+      "emoji": "👕",
+      "image_path": null,
+      "category": "Upper Body",
+      "names": {
+        "english": "Shirt",
+        "indonesian": "Kemeja",
+        "arabic_vocalized": "قَمِيصٌ",
+        "arabic_unvocalized": "قميص",
+        "arabic_transliteration_indonesian": "Qamis"
+      }
+    },
+    {
+      "id": "clothing002",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Lower Body",
+      "names": {
+        "english": "Pants",
+        "indonesian": "Celana",
+        "arabic_vocalized": "سِرْوَالٌ",
+        "arabic_unvocalized": "سروال",
+        "arabic_transliteration_indonesian": "Sirwal"
+      }
+    },
+    {
+      "id": "clothing003",
+      "unicode": "U+1F45F",
+      "emoji": "👟",
+      "image_path": null,
+      "category": "Footwear",
+      "names": {
+        "english": "Shoes",
+        "indonesian": "Sepatu",
+        "arabic_vocalized": "جَزْمَةٌ",
+        "arabic_unvocalized": "جزمة",
+        "arabic_transliteration_indonesian": "Jazma"
+      }
+    },
+    {
+      "id": "clothing004",
+      "unicode": "U+1F3A9",
+      "emoji": "🎩",
+      "image_path": null,
+      "category": "Headwear",
+      "names": {
+        "english": "Hat",
+        "indonesian": "Topi",
+        "arabic_vocalized": "قُبَّعَةٌ",
+        "arabic_unvocalized": "قبعة",
+        "arabic_transliteration_indonesian": "Qubbaah"
+      }
+    },
+    {
+      "id": "clothing005",
+      "unicode": "U+1F9E6",
+      "emoji": "🧦",
+      "image_path": null,
+      "category": "Footwear",
+      "names": {
+        "english": "Socks",
+        "indonesian": "Kaus Kaki",
+        "arabic_vocalized": "جَوْرَبٌ",
+        "arabic_unvocalized": "جورب",
+        "arabic_transliteration_indonesian": "Jaurab"
+      }
+    },
+    {
+      "id": "clothing006",
+      "unicode": null,
+      "emoji": null,
+      "image_path": null,
+      "category": "Full Body",
+      "names": {
+        "english": "Dress",
+        "indonesian": "Gaun",
+        "arabic_vocalized": "فُسْتَانٌ",
+        "arabic_unvocalized": "فستان",
+        "arabic_transliteration_indonesian": "Fustan"
+      }
+    },
+    {
+      "id": "clothing007",
+      "unicode": "U+1F9E5",
+      "emoji": "🧥",
+      "image_path": null,
+      "category": "Outerwear",
+      "names": {
+        "english": "Jacket",
+        "indonesian": "Jaket",
+        "arabic_vocalized": "مِعْطَفٌ",
+        "arabic_unvocalized": "معطف",
+        "arabic_transliteration_indonesian": "Mitaf"
+      }
+    }
+  ]
+}
