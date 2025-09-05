@@ -17,24 +17,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QuizScreen(
-    onQuizCompleted: (Int, Int, Int) -> Unit,
+    onQuizCompleted: () -> Unit,
     viewModel: SharedQuizViewModel
 ) {
     val quizLevel by viewModel.quizLevel.collectAsState()
     var currentQuestionIndex by remember { mutableStateOf(0) }
     var correctAnswers by remember { mutableStateOf(0) }
     var incorrectAnswers by remember { mutableStateOf(0) }
-    val snackbarHostState = remember { SnackbarHostState() }
-    var snackbarBgColor by remember { mutableStateOf(Color.Gray) }
-    var snackbarFgColor by remember { mutableStateOf(Color.White) }
     var showExitDialog by remember { mutableStateOf(false) }
     var showSummaryDialog by remember { mutableStateOf(false) }
-    val scope = rememberCoroutineScope()
+    var showFeedbackDialog by remember { mutableStateOf(false) }
+    var feedbackMessage by remember { mutableStateOf("") }
 
     quizLevel?.let { level ->
         // Show summary dialog if quiz is complete
@@ -73,11 +70,47 @@ fun QuizScreen(
                     Button(
                         onClick = {
                             showSummaryDialog = false
-                            onQuizCompleted(level.levelId, correctAnswers, incorrectAnswers)
+                            onQuizCompleted()
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text("Ke daftar level")
+                    }
+                },
+                dismissButton = {}
+            )
+            return@let
+        }
+
+        // Incorrect feedback dialog
+        if (showFeedbackDialog) {
+            AlertDialog(
+                onDismissRequest = { showFeedbackDialog = false },
+                title = {
+                    Text(
+                        text = "Salah!",
+                        style = MaterialTheme.typography.headlineMedium,
+                        color = Color.Red,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                },
+                text = {
+                    Text(
+                        text = feedbackMessage,
+                        style = MaterialTheme.typography.bodyLarge,
+                        textAlign = TextAlign.Center
+                    )
+                },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            showFeedbackDialog = false
+                            currentQuestionIndex++
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Lanjut")
                     }
                 },
                 dismissButton = {}
@@ -93,15 +126,6 @@ fun QuizScreen(
                 TopAppBar(
                     title = { Text("Level ${level.levelId} - Question ${currentQuestionIndex + 1}/${level.totalQuestions}") }
                 )
-            },
-            snackbarHost = {
-                SnackbarHost(snackbarHostState) { data ->
-                    Snackbar(
-                        snackbarData = data,
-                        containerColor = snackbarBgColor,
-                        contentColor = snackbarFgColor,
-                    )
-                }
             }
         ) { padding ->
             Column(
@@ -149,21 +173,12 @@ fun QuizScreen(
                                     val isCorrect = choice == currentQuestion.correctAnswer
                                     if (isCorrect) {
                                         correctAnswers++
-                                        snackbarBgColor = Color.Green
-                                        snackbarFgColor = Color.Black
+                                        currentQuestionIndex++
                                     } else {
                                         incorrectAnswers++
-                                        snackbarBgColor = Color.Red
-                                        snackbarFgColor = Color.White
+                                        feedbackMessage = "${currentQuestion.questionText} = ${currentQuestion.correctAnswer}"
+                                        showFeedbackDialog = true
                                     }
-                                    scope.launch {
-                                        snackbarHostState.showSnackbar(
-                                            message = if (isCorrect) "Benar!" else "Salah! ${currentQuestion.questionText} = ${currentQuestion.correctAnswer}",
-                                            duration = SnackbarDuration.Short,
-                                            
-                                        )
-                                    }
-                                    currentQuestionIndex++
                                 },
                                 modifier = Modifier.fillMaxWidth()
                             ) {
@@ -217,7 +232,7 @@ fun QuizScreen(
                     Button(
                         onClick = {
                             showExitDialog = false
-                            onQuizCompleted(level.levelId, correctAnswers, incorrectAnswers)
+                            onQuizCompleted()
                         }
                     ) {
                         Text("Keluar")

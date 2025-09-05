@@ -63,19 +63,31 @@ fun LevelSelectionScreen(
                             val (rangeStart, rangeEnd) = ranges[index]
                             // Generate equal number of questions for each type (3 of each type, total 6)
                             val wordToNumberQuestions = QuestionGenerator.generateQuestions(
-                                count = 3,
+                                count = 4,
                                 type = QuizQuestion.QuestionType.WORD_TO_NUMBER,
                                 rangeStart = rangeStart,
                                 rangeEnd = rangeEnd
                             )
                             val numberToWordQuestions = QuestionGenerator.generateQuestions(
-                                count = 3,
+                                count = 4,
                                 type = QuizQuestion.QuestionType.NUMBER_TO_WORD,
                                 rangeStart = rangeStart,
                                 rangeEnd = rangeEnd
                             )
-                            // Combine questions from both types
-                            val questions = wordToNumberQuestions + numberToWordQuestions
+                            val regularToArabicQuestions = QuestionGenerator.generateQuestions(
+                                count = 4,
+                                type = QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER,
+                                rangeStart = rangeStart,
+                                rangeEnd = rangeEnd
+                            )
+                            val arabicToRegularQuestions = QuestionGenerator.generateQuestions(
+                                count = 4,
+                                type = QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER,
+                                rangeStart = rangeStart,
+                                rangeEnd = rangeEnd
+                            )
+                            // Combine questions from all types
+                            val questions = regularToArabicQuestions + arabicToRegularQuestions + wordToNumberQuestions + numberToWordQuestions
                             // Store the generated QuizLevel in the ViewModel
                             viewModel.setQuizLevel(
                                 QuizLevel(

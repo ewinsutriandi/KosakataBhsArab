@@ -19,14 +19,28 @@ object QuestionGenerator {
                     Triple(
                         arabicNumber.arabicWords,
                         arabicNumber.arabicDigits,
-                        generateChoices(number, rangeStart, rangeEnd, true)
+                        generateChoices(number, rangeStart, rangeEnd, type)
                     )
                 }
                 QuizQuestion.QuestionType.NUMBER_TO_WORD -> {
                     Triple(
                         arabicNumber.arabicDigits,
                         arabicNumber.arabicWords,
-                        generateChoices(number, rangeStart, rangeEnd, false)
+                        generateChoices(number, rangeStart, rangeEnd, type)
+                    )
+                }
+                QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> {
+                    Triple(
+                        number.toString(),
+                        arabicNumber.arabicDigits,
+                        generateChoices(number, rangeStart, rangeEnd, type)
+                    )
+                }
+                QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> {
+                    Triple(
+                        arabicNumber.arabicDigits,
+                        number.toString(),
+                        generateChoices(number, rangeStart, rangeEnd, type)
                     )
                 }
             }
@@ -47,11 +61,16 @@ object QuestionGenerator {
         correctNumber: Int,
         rangeStart: Int,
         rangeEnd: Int,
-        isNumberChoice: Boolean
+        questionType: QuizQuestion.QuestionType
     ): List<String> {
         val choices = mutableSetOf<String>()
         val correctArabicNumber = ArabicNumber(correctNumber)
-        val correctChoice = if (isNumberChoice) correctArabicNumber.arabicDigits else correctArabicNumber.arabicWords
+        val correctChoice = when (questionType) {
+            QuizQuestion.QuestionType.WORD_TO_NUMBER -> correctArabicNumber.arabicDigits
+            QuizQuestion.QuestionType.NUMBER_TO_WORD -> correctArabicNumber.arabicWords
+            QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> correctArabicNumber.arabicDigits
+            QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> correctNumber.toString()
+        }
         choices.add(correctChoice)
 
         // Generate plausible distractors based on common diversions
@@ -83,7 +102,12 @@ object QuestionGenerator {
         // Add unique distractors up to 3
         distractorCandidates.distinct().shuffled().take(3).forEach { distractorNum ->
             val distractorArabic = ArabicNumber(distractorNum)
-            val distractorChoice = if (isNumberChoice) distractorArabic.arabicDigits else distractorArabic.arabicWords
+            val distractorChoice = when (questionType) {
+                QuizQuestion.QuestionType.WORD_TO_NUMBER -> distractorArabic.arabicDigits
+                QuizQuestion.QuestionType.NUMBER_TO_WORD -> distractorArabic.arabicWords
+                QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> distractorArabic.arabicDigits
+                QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> distractorNum.toString()
+            }
             choices.add(distractorChoice)
         }
 
@@ -92,7 +116,12 @@ object QuestionGenerator {
             val randomNumber = Random.nextInt(rangeStart, rangeEnd + 1)
             if (randomNumber != correctNumber) {
                 val randomArabicNumber = ArabicNumber(randomNumber)
-                val choice = if (isNumberChoice) randomArabicNumber.arabicDigits else randomArabicNumber.arabicWords
+                val choice = when (questionType) {
+                    QuizQuestion.QuestionType.WORD_TO_NUMBER -> randomArabicNumber.arabicDigits
+                    QuizQuestion.QuestionType.NUMBER_TO_WORD -> randomArabicNumber.arabicWords
+                    QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> randomArabicNumber.arabicDigits
+                    QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> randomNumber.toString()
+                }
                 choices.add(choice)
             }
         }

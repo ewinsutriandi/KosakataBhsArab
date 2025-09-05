@@ -9,7 +9,9 @@ data class QuizQuestion(
 ) {
     enum class QuestionType {
         WORD_TO_NUMBER, // Type A: Arabic word shown, choose number
-        NUMBER_TO_WORD  // Type B: Number shown, choose word
+        NUMBER_TO_WORD,  // Type B: Number shown, choose word
+        REGULAR_TO_ARABIC_NUMBER, // Regular number shown, choose Arabic number
+        ARABIC_TO_REGULAR_NUMBER  // Arabic number shown, choose regular number
     }
 }
 

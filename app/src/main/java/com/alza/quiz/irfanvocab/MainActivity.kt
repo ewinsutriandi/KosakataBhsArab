@@ -45,7 +45,7 @@ fun AppNavigation() {
         }
         composable("quiz_screen") {
             QuizScreen(
-                onQuizCompleted = { levelId, correct, incorrect ->
+                onQuizCompleted = {  ->
                     navController.navigate("level_selection")
                 },
                 viewModel = sharedViewModel
