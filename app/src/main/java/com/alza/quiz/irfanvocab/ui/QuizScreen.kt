@@ -14,9 +14,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.alza.quiz.irfanvocab.util.SoundUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,6 +26,7 @@ fun QuizScreen(
     onQuizCompleted: () -> Unit,
     viewModel: SharedQuizViewModel
 ) {
+    val context = LocalContext.current
     val quizLevel by viewModel.quizLevel.collectAsState()
     var currentQuestionIndex by remember { mutableStateOf(0) }
     var correctAnswers by remember { mutableStateOf(0) }
@@ -88,7 +91,7 @@ fun QuizScreen(
                 onDismissRequest = { showFeedbackDialog = false },
                 title = {
                     Text(
-                        text = "Salah!",
+                        text = "Jawaban salah",
                         style = MaterialTheme.typography.headlineMedium,
                         color = Color.Red,
                         textAlign = TextAlign.Center,
@@ -98,8 +101,9 @@ fun QuizScreen(
                 text = {
                     Text(
                         text = feedbackMessage,
-                        style = MaterialTheme.typography.bodyLarge,
-                        textAlign = TextAlign.Center
+                        style = MaterialTheme.typography.headlineMedium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
                     )
                 },
                 confirmButton = {
@@ -173,9 +177,11 @@ fun QuizScreen(
                                     val isCorrect = choice == currentQuestion.correctAnswer
                                     if (isCorrect) {
                                         correctAnswers++
+                                        SoundUtil.playCorrectSound(context)
                                         currentQuestionIndex++
                                     } else {
                                         incorrectAnswers++
+                                        SoundUtil.playWrongSound(context)
                                         feedbackMessage = "${currentQuestion.questionText} = ${currentQuestion.correctAnswer}"
                                         showFeedbackDialog = true
                                     }
