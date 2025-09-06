@@ -5,20 +5,41 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.alza.quiz.irfanvocab.ui.theme.OnErrorContainer
 import com.alza.quiz.irfanvocab.util.SoundUtil
+import com.alza.quiz.irfanvocab.util.StatsUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,6 +49,7 @@ fun QuizScreen(
 ) {
     val context = LocalContext.current
     val quizLevel by viewModel.quizLevel.collectAsState()
+    val levelTitle by viewModel.levelTitle.collectAsState()
     var currentQuestionIndex by remember { mutableStateOf(0) }
     var correctAnswers by remember { mutableStateOf(0) }
     var incorrectAnswers by remember { mutableStateOf(0) }
@@ -72,6 +94,8 @@ fun QuizScreen(
                 confirmButton = {
                     Button(
                         onClick = {
+                            // Save stats before navigating back
+                            StatsUtil.saveStats(context, level.levelId, correctAnswers, incorrectAnswers)
                             showSummaryDialog = false
                             onQuizCompleted()
                         },
@@ -93,7 +117,7 @@ fun QuizScreen(
                     Text(
                         text = "Jawaban salah",
                         style = MaterialTheme.typography.headlineMedium,
-                        color = Color.Red,
+                        color = OnErrorContainer,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth()
                     )
@@ -128,7 +152,7 @@ fun QuizScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
-                    title = { Text("Level ${level.levelId} - Question ${currentQuestionIndex + 1}/${level.totalQuestions}") }
+                    title = { Text(levelTitle ?: "Level ${level.levelId}") }
                 )
             }
         ) { padding ->
