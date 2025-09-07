@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.alza.quiz.irfanvocab.model.QuestionGenerator
-import com.alza.quiz.irfanvocab.model.QuizLevel
+import com.alza.quiz.irfanvocab.model.NumberQuestionGenerator
+import com.alza.quiz.irfanvocab.model.ExerciseModel
 import com.alza.quiz.irfanvocab.model.QuizQuestion
 import com.alza.quiz.irfanvocab.util.StatsUtil
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -84,25 +84,25 @@ fun LevelSelectionScreen(
                         .clickable {
                             val (rangeStart, rangeEnd) = ranges[index]
                             // Generate equal number of questions for each type (3 of each type, total 6)
-                            val wordToNumberQuestions = QuestionGenerator.generateQuestions(
+                            val wordToNumberQuestions = NumberQuestionGenerator.generateQuestions(
                                 count = 4,
                                 type = QuizQuestion.QuestionType.WORD_TO_NUMBER,
                                 rangeStart = rangeStart,
                                 rangeEnd = rangeEnd
                             )
-                            val numberToWordQuestions = QuestionGenerator.generateQuestions(
+                            val numberToWordQuestions = NumberQuestionGenerator.generateQuestions(
                                 count = 4,
                                 type = QuizQuestion.QuestionType.NUMBER_TO_WORD,
                                 rangeStart = rangeStart,
                                 rangeEnd = rangeEnd
                             )
-                            val regularToArabicQuestions = QuestionGenerator.generateQuestions(
+                            val regularToArabicQuestions = NumberQuestionGenerator.generateQuestions(
                                 count = 4,
                                 type = QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER,
                                 rangeStart = rangeStart,
                                 rangeEnd = rangeEnd
                             )
-                            val arabicToRegularQuestions = QuestionGenerator.generateQuestions(
+                            val arabicToRegularQuestions = NumberQuestionGenerator.generateQuestions(
                                 count = 4,
                                 type = QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER,
                                 rangeStart = rangeStart,
@@ -112,10 +112,11 @@ fun LevelSelectionScreen(
                             val questions = regularToArabicQuestions + arabicToRegularQuestions + wordToNumberQuestions + numberToWordQuestions
                             // Store the generated QuizLevel in the ViewModel
                             viewModel.setQuizLevel(
-                                QuizLevel(
+                                ExerciseModel(
                                     levelId = index + 1,
                                     questions = questions.shuffled(),
-                                    totalQuestions = questions.size
+                                    exerciseType = ExerciseModel.ExerciseType.NUMBERS
+                                    //totalQuestions = questions.size
                                 ),
                                 title = levels[index]
                             )
@@ -170,16 +171,16 @@ fun LevelSelectionScreen(
 
 
 class SharedQuizViewModel : ViewModel() {
-    private val _quizLevel = MutableStateFlow<QuizLevel?>(null)
-    val quizLevel: StateFlow<QuizLevel?> = _quizLevel
+    private val _exerciseModel = MutableStateFlow<ExerciseModel?>(null)
+    val exerciseModel: StateFlow<ExerciseModel?> = _exerciseModel
     private val _levelTitle = MutableStateFlow<String?>(null)
     val levelTitle: StateFlow<String?> = _levelTitle
 
     val instanceId = UUID.randomUUID().toString()
 
-    fun setQuizLevel(level: QuizLevel, title: String) {
+    fun setQuizLevel(level: ExerciseModel, title: String) {
         println("SharedQuizViewModel $instanceId set QuizLevel: $level, Title: $title")
-        _quizLevel.value = level
+        _exerciseModel.value = level
         _levelTitle.value = title
     }
 }

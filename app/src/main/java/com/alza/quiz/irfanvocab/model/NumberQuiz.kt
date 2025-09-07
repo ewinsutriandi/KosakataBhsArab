@@ -11,16 +11,27 @@ data class QuizQuestion(
         WORD_TO_NUMBER, // Type A: Arabic word shown, choose number
         NUMBER_TO_WORD,  // Type B: Number shown, choose word
         REGULAR_TO_ARABIC_NUMBER, // Regular number shown, choose Arabic number
-        ARABIC_TO_REGULAR_NUMBER  // Arabic number shown, choose regular number
+        ARABIC_TO_REGULAR_NUMBER,  // Arabic number shown, choose regular number
+        TRANSLATION,
     }
 }
 
-data class QuizLevel(
+data class ExerciseModel(
     val levelId: Int,
     val questions: List<QuizQuestion>,
-    val totalQuestions: Int,
+    //val totalQuestions: Int,
+    val exerciseType: ExerciseType,
     val correctAnswers: Int = 0,
     val incorrectAnswers: Int = 0
 ) {
-    fun isCompleted(): Boolean = (correctAnswers + incorrectAnswers) == totalQuestions
+    enum class ExerciseType {
+        NUMBERS,
+        ANIMALS,
+        BODY_PARTS,
+        FAMILY,
+        FRUITS,
+        COLORS,
+        APPARELS,
+    }
+    fun isCompleted(): Boolean = (correctAnswers + incorrectAnswers) == questions.size
 }

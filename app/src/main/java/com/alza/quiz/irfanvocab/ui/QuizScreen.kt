@@ -48,7 +48,7 @@ fun QuizScreen(
     viewModel: SharedQuizViewModel
 ) {
     val context = LocalContext.current
-    val quizLevel by viewModel.quizLevel.collectAsState()
+    val quizLevel by viewModel.exerciseModel.collectAsState()
     val levelTitle by viewModel.levelTitle.collectAsState()
     var currentQuestionIndex by remember { mutableStateOf(0) }
     var correctAnswers by remember { mutableStateOf(0) }
@@ -70,7 +70,7 @@ fun QuizScreen(
                 onDismissRequest = { /* Prevent dismissal by clicking outside */ },
                 title = {
                     Text(
-                        text = "${((correctAnswers.toFloat() / level.totalQuestions) * 100).toInt()}%",
+                        text = "${((correctAnswers.toFloat() / level.questions.size) * 100).toInt()}%",
                         style = MaterialTheme.typography.headlineLarge.copy(fontSize = 36.sp),
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth()
@@ -95,7 +95,7 @@ fun QuizScreen(
                     Button(
                         onClick = {
                             // Save stats before navigating back
-                            StatsUtil.saveStats(context, level.levelId, correctAnswers, incorrectAnswers)
+                            StatsUtil.saveStats(context,level.exerciseType, level.levelId, correctAnswers, incorrectAnswers)
                             showSummaryDialog = false
                             onQuizCompleted()
                         },
@@ -224,7 +224,7 @@ fun QuizScreen(
 
                 // Progress indicator
                 LinearProgressIndicator(
-                    progress = { (currentQuestionIndex + 1).toFloat() / level.totalQuestions },
+                    progress = { (currentQuestionIndex + 1).toFloat() / level.questions.size },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 16.dp),

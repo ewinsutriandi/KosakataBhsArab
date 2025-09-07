@@ -1,0 +1,128 @@
+[
+  {
+    "English": "Bee",
+    "Arabic_Singular": "نَحْلَةٌ",
+    "Arabic_Species_Collective": "نَحْلٌ",
+    "Indonesian": "Lebah"
+  },
+  {
+    "English": "Ant",
+    "Arabic_Singular": "نَمْلَةٌ",
+    "Arabic_Species_Collective": "نَمْلٌ",
+    "Indonesian": "Semute"
+  },
+  {
+    "English": "Snake",
+    "Arabic_Singular": "ثُعْبَانٌ",
+    "Arabic_Species_Collective": "ثَعَابِينُ",
+    "Indonesian": "Ular"
+  },
+  {
+    "English": "Spider",
+    "Arabic_Singular": "عَنْكَبُوتٌ",
+    "Arabic_Species_Collective": "عَنَاكِبُ",
+    "Indonesian": "Laba-laba"
+  },
+  {
+    "English": "Cat",
+    "Arabic_Singular": "قِطٌّ",
+    "Arabic_Species_Collective": "قِطَطٌ",
+    "Indonesian": "Kucing"
+  },
+  {
+    "English": "Camel",
+    "Arabic_Singular": "جَمَلٌ",
+    "Arabic_Species_Collective": "جِمَالٌ",
+    "Indonesian": "Unta"
+  },
+  {
+    "English": "Horse",
+    "Arabic_Singular": "حِصَانٌ",
+    "Arabic_Species_Collective": "خَيْلٌ",
+    "Indonesian": "Kuda"
+  },
+  {
+    "English": "Dog",
+    "Arabic_Singular": "كَلْبٌ",
+    "Arabic_Species_Collective": "كِلَابٌ",
+    "Indonesian": "Anjing"
+  },
+  {
+    "English": "Mosquito",
+    "Arabic_Singular": "بَعُوضَةٌ",
+    "Arabic_Species_Collective": "بَعُوضٌ",
+    "Indonesian": "Nyamuk"
+  },
+  {
+    "English": "Crocodile",
+    "Arabic_Singular": "تِمْسَاحٌ",
+    "Arabic_Species_Collective": "تَمَاسِيحُ",
+    "Indonesian": "Buaya"
+  },
+  {
+    "English": "Bird",
+    "Arabic_Singular": "طَائِرٌ",
+    "Arabic_Species_Collective": "طُيُورٌ",
+    "Indonesian": "Burung"
+  },
+  {
+    "English": "Pig",
+    "Arabic_Singular": "خِنْزِيرٌ",
+    "Arabic_Species_Collective": "خَنَازِيرُ",
+    "Indonesian": "Babi"
+  },
+  {
+    "English": "Frog",
+    "Arabic_Singular": "ضِفْدَعٌ",
+    "Arabic_Species_Collective": "ضَفَادِعُ",
+    "Indonesian": "Katak"
+  },
+  {
+    "English": "Cow",
+    "Arabic_Singular": "بَقَرَةٌ",
+    "Arabic_Species_Collective": "بَقَرٌ",
+    "Indonesian": "Sapi"
+  },
+  {
+    "English": "Goat",
+    "Arabic_Singular": "مَاعِزٌ",
+    "Arabic_Species_Collective": "مَعْزٌ",
+    "Indonesian": "Kambing"
+  },
+  {
+    "English": "Fly",
+    "Arabic_Singular": "ذُبَابَةٌ",
+    "Arabic_Species_Collective": "ذُبَابٌ",
+    "Indonesian": "Lalat"
+  },
+  {
+    "English": "Lizard",
+    "Arabic_Singular": "سِحْلِيَّةٌ",
+    "Arabic_Species_Collective": "سَحَالِيُّ",
+    "Indonesian": "Kadal"
+  },
+  {
+    "English": "Chicken",
+    "Arabic_Singular": "دَجَاجَةٌ",
+    "Arabic_Species_Collective": "دَجَاجٌ",
+    "Indonesian": "Ayam"
+  },
+  {
+    "English": "Duck",
+    "Arabic_Singular": "بَطَّةٌ",
+    "Arabic_Species_Collective": "بَطٌّ",
+    "Indonesian": "Bebek"
+  },
+  {
+    "English": "Gecko",
+    "Arabic_Singular": "وَزَغَةٌ",
+    "Arabic_Species_Collective": "وَزَغٌ",
+    "Indonesian": "Cicak"
+  },
+  {
+    "English": "Fish",
+    "Arabic_Singular": "سَمَكَةٌ",
+    "Arabic_Species_Collective": "سَمَكٌ",
+    "Indonesian": "Ikan"
+  }
+]

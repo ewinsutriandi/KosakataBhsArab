@@ -18,6 +18,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.alza.quiz.irfanvocab.ui.LevelSelectionScreen
+import com.alza.quiz.irfanvocab.ui.MainScreen
 import com.alza.quiz.irfanvocab.ui.QuizScreen
 import com.alza.quiz.irfanvocab.ui.SharedQuizViewModel
 import com.alza.quiz.irfanvocab.ui.theme.BelajarKosakataArabTheme
@@ -39,7 +40,10 @@ class MainActivity : ComponentActivity() {
 fun AppNavigation() {
     val navController = rememberNavController()
     val sharedViewModel: SharedQuizViewModel = viewModel()
-    NavHost(navController = navController, startDestination = "level_selection") {
+    NavHost(navController = navController, startDestination = "main") {
+        composable("main") {
+            MainScreen(navController = navController, viewModel = sharedViewModel)
+        }
         composable("level_selection") {
             LevelSelectionScreen(navController = navController, viewModel = sharedViewModel)
         }

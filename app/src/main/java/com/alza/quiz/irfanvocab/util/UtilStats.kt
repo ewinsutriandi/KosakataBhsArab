@@ -6,9 +6,11 @@ import android.content.SharedPreferences
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import androidx.core.content.edit
+import com.alza.quiz.irfanvocab.model.ExerciseModel
 
 @Serializable
 data class QuizStats(
+    val exerciseType: ExerciseModel.ExerciseType,
     val levelId: Int,
     val correctAnswers: Int,
     val incorrectAnswers: Int,
@@ -23,9 +25,9 @@ object StatsUtil {
         return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
     }
 
-    fun saveStats(context: Context, levelId: Int, correctAnswers: Int, incorrectAnswers: Int) {
+    fun saveStats(context: Context, type: ExerciseModel.ExerciseType,levelId: Int, correctAnswers: Int, incorrectAnswers: Int) {
         val statsList = getStats(context).toMutableList()
-        statsList.add(QuizStats(levelId, correctAnswers, incorrectAnswers))
+        statsList.add(QuizStats(type,levelId, correctAnswers, incorrectAnswers))
         val json = Json.encodeToString(statsList)
         getPrefs(context).edit { putString(KEY_STATS_NUMBER, json) }
     }

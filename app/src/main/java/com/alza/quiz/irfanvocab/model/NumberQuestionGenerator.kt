@@ -2,7 +2,7 @@ package com.alza.quiz.irfanvocab.model
 
 import kotlin.random.Random
 
-object QuestionGenerator {
+object NumberQuestionGenerator {
     fun generateQuestions(
         count: Int,
         type: QuizQuestion.QuestionType,
@@ -43,6 +43,8 @@ object QuestionGenerator {
                         generateChoices(number, rangeStart, rangeEnd, type)
                     )
                 }
+
+                QuizQuestion.QuestionType.TRANSLATION -> TODO()
             }
             questions.add(
                 QuizQuestion(
@@ -70,6 +72,7 @@ object QuestionGenerator {
             QuizQuestion.QuestionType.NUMBER_TO_WORD -> correctArabicNumber.arabicWords
             QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> correctArabicNumber.arabicDigits
             QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> correctNumber.toString()
+            QuizQuestion.QuestionType.TRANSLATION -> TODO()
         }
         choices.add(correctChoice)
 
@@ -107,6 +110,7 @@ object QuestionGenerator {
                 QuizQuestion.QuestionType.NUMBER_TO_WORD -> distractorArabic.arabicWords
                 QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> distractorArabic.arabicDigits
                 QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> distractorNum.toString()
+                QuizQuestion.QuestionType.TRANSLATION -> TODO()
             }
             choices.add(distractorChoice)
         }
@@ -121,6 +125,7 @@ object QuestionGenerator {
                     QuizQuestion.QuestionType.NUMBER_TO_WORD -> randomArabicNumber.arabicWords
                     QuizQuestion.QuestionType.REGULAR_TO_ARABIC_NUMBER -> randomArabicNumber.arabicDigits
                     QuizQuestion.QuestionType.ARABIC_TO_REGULAR_NUMBER -> randomNumber.toString()
+                    QuizQuestion.QuestionType.TRANSLATION -> TODO()
                 }
                 choices.add(choice)
             }
