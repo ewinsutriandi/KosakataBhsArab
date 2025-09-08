@@ -1,5 +1,7 @@
 package com.alza.quiz.irfanvocab.ui
 
+import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,9 +16,13 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AccountBox
 import androidx.compose.material.icons.outlined.Build
+import androidx.compose.material.icons.outlined.Face
+import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.ShoppingCart
+import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -24,6 +30,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -39,6 +50,7 @@ import com.alza.quiz.irfanvocab.model.TransDirection
 import com.alza.quiz.irfanvocab.model.loadAndGenerateQuiz
 import com.alza.quiz.irfanvocab.model.trLevelNames
 import com.alza.quiz.irfanvocab.ui.theme.PrimaryContainer
+import kotlinx.coroutines.delay
 
 @Composable
 fun MainScreen(
@@ -46,6 +58,24 @@ fun MainScreen(
     viewModel: SharedQuizViewModel
 ) {
     val context = LocalContext.current
+    var backPressedOnce by remember { mutableStateOf(false) }
+
+    BackHandler {
+        if (backPressedOnce) {
+            (context as? android.app.Activity)?.finish()
+        } else {
+            backPressedOnce = true
+            Toast.makeText(context, "Tekan kembali sekali lagi untuk keluar dari app", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    LaunchedEffect(backPressedOnce) {
+        if (backPressedOnce) {
+            delay(3000)
+            backPressedOnce = false
+        }
+    }
+
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -59,13 +89,23 @@ fun MainScreen(
                     onClick = { navController.navigate("info") }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Outlined.Build, contentDescription = "Copyright & license") },
-                    label = { Text("Hak Cipta") },
+                    icon = {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_copyright),
+                            contentDescription = "License"
+                        )
+                    },
+                    label = { Text("Lisensi") },
                     selected = false,
                     onClick = { navController.navigate("copy") }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Outlined.ShoppingCart, contentDescription = "More") },
+                    icon = {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_moreapps),
+                            contentDescription = "More apps"
+                        )
+                    },
                     label = { Text("Apps Lainnya") },
                     selected = false,
                     onClick = { navController.navigate("store") }
@@ -102,9 +142,13 @@ fun MainScreen(
                     listOf(
                         ExerciseModel.ExerciseType.NUMBERS,
                         ExerciseModel.ExerciseType.ANIMALS,
-                        ExerciseModel.ExerciseType.COLORS,
                         ExerciseModel.ExerciseType.FRUITS,
                         ExerciseModel.ExerciseType.FAMILY,
+                        ExerciseModel.ExerciseType.CLASSROOM,
+                        ExerciseModel.ExerciseType.BODY_PARTS,
+                        ExerciseModel.ExerciseType.COLORS,
+                        ExerciseModel.ExerciseType.APPARELS,
+                        ExerciseModel.ExerciseType.JOBS,
                     )
                 ) { exerciseType ->
                     VocabularyButton(
@@ -171,6 +215,10 @@ fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType,
                 ExerciseModel.ExerciseType.FRUITS -> painterResource(id = R.drawable.icon_fruits)
                 ExerciseModel.ExerciseType.COLORS -> painterResource(id = R.drawable.icon_colors)
                 ExerciseModel.ExerciseType.FAMILY -> painterResource(id = R.drawable.icon_family)
+                ExerciseModel.ExerciseType.CLASSROOM -> painterResource(id = R.drawable.icon_classroom)
+                ExerciseModel.ExerciseType.JOBS -> painterResource(id = R.drawable.icon_jobs)
+                ExerciseModel.ExerciseType.APPARELS -> painterResource(id = R.drawable.icon_apparels)
+                ExerciseModel.ExerciseType.BODY_PARTS -> painterResource(id = R.drawable.icon_bodyparts)
                 else -> painterResource(id = R.drawable.icon_animals)
             },
 
@@ -181,22 +229,16 @@ fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType,
                 .background(PrimaryContainer)
                 .padding(8.dp)
         )
-        Text(
-            text = when (exerciseType) {
-                ExerciseModel.ExerciseType.NUMBERS -> "Bilangan"
-                ExerciseModel.ExerciseType.ANIMALS -> "Hewan"
-                ExerciseModel.ExerciseType.APPARELS -> "Pakaian"
-                ExerciseModel.ExerciseType.COLORS -> "Warna"
-                ExerciseModel.ExerciseType.FRUITS -> "Buah"
-                ExerciseModel.ExerciseType.FAMILY -> "Keluarga"
-                else -> exerciseType.name.lowercase().replaceFirstChar { it.titlecase() }
-            },
-            style = MaterialTheme.typography.titleMedium.copy(
-                fontWeight = FontWeight.Bold,
-                //color = Color(0xFF0288D1),
-                //fontFamily = FontFamily.SansSerif
-            ),
-            modifier = Modifier.padding(top = 8.dp)
-        )
+        trLevelNames[exerciseType]?.let {
+            Text(
+                text = it,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    //color = Color(0xFF0288D1),
+                    //fontFamily = FontFamily.SansSerif
+                ),
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
     }
 }

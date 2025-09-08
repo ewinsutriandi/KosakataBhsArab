@@ -11,8 +11,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -37,6 +41,15 @@ fun CopyrightScreen(
             TopAppBar(
                 title = { Text("Source code & lisensi") }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    navController.navigate("main")
+                }
+            ) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+            }
         }
     ) { innerPadding ->
         Column(
@@ -85,12 +98,7 @@ fun CopyrightScreen(
                 ) {
                     Text("Kode (github)")
                 }
-                Spacer(modifier = Modifier.width(8.dp))
-                Button(
-                    onClick = { navController.navigate(backRoute) }
-                ) {
-                    Text("Kembali")
-                }
+
             }
             // Back button
 

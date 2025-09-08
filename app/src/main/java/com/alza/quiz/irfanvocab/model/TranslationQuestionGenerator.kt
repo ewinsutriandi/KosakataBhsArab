@@ -26,15 +26,20 @@ val trFiles = mapOf(
     ExerciseModel.ExerciseType.COLORS to "colors.json",
     ExerciseModel.ExerciseType.FAMILY to "family.json",
     ExerciseModel.ExerciseType.FRUITS to "fruits.json",
+    ExerciseModel.ExerciseType.CLASSROOM to "classroom.json",
+    ExerciseModel.ExerciseType.JOBS to "jobs.json",
 )
 
 val trLevelNames = mapOf(
-    ExerciseModel.ExerciseType.ANIMALS to "hewan",
-    ExerciseModel.ExerciseType.APPARELS to "pakaian",
-    ExerciseModel.ExerciseType.BODY_PARTS to "bagian tubuh",
-    ExerciseModel.ExerciseType.COLORS to "warna",
-    ExerciseModel.ExerciseType.FAMILY to "anggota keluarga",
-    ExerciseModel.ExerciseType.FRUITS to "buah-buahan",
+    ExerciseModel.ExerciseType.NUMBERS to "Bilangan",
+    ExerciseModel.ExerciseType.ANIMALS to "Hewan",
+    ExerciseModel.ExerciseType.APPARELS to "Pakaian",
+    ExerciseModel.ExerciseType.BODY_PARTS to "Bagian tubuh",
+    ExerciseModel.ExerciseType.COLORS to "Warna",
+    ExerciseModel.ExerciseType.FAMILY to "Anggota keluarga",
+    ExerciseModel.ExerciseType.FRUITS to "Buah-buahan",
+    ExerciseModel.ExerciseType.CLASSROOM to "Ruang kelas",
+    ExerciseModel.ExerciseType.JOBS to "Pekerjaan",
 )
 
 fun generateTranslationQuiz(direction: TransDirection,vocabList: List<Vocabulary>, numQuestions: Int, exerciseType: ExerciseModel.ExerciseType): List<QuizQuestion> {

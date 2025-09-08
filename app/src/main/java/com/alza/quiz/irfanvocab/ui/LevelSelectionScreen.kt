@@ -1,8 +1,13 @@
 package com.alza.quiz.irfanvocab.ui
 
+import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -51,11 +56,24 @@ fun LevelSelectionScreen(
     val context = LocalContext.current
     val stats = StatsUtil.getStats(context)
 
+    BackHandler {
+        navController.navigate("main")
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text("Pilih Level") }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    navController.navigate("main")
+                }
+            ) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Add")
+            }
         }
     ) { padding ->
         LazyColumn(
@@ -164,7 +182,9 @@ fun LevelSelectionScreen(
                     }
                 }
             }
+
         }
+
     }
 }
 

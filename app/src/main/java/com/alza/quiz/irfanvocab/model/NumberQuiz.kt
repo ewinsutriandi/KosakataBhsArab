@@ -32,6 +32,9 @@ data class ExerciseModel(
         FRUITS,
         COLORS,
         APPARELS,
+        CLASSROOM,
+        JOBS,
+        BODYPARTS
     }
     fun isCompleted(): Boolean = (correctAnswers + incorrectAnswers) == questions.size
 }

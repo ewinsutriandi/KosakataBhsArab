@@ -1,19 +1,26 @@
 package com.alza.quiz.irfanvocab.ui
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
@@ -23,11 +30,21 @@ fun InfoScreen(
     navController: NavController,
     backRoute: String
 ) {
+    val context = LocalContext.current
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text("Tentang aplikasi ini") }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    navController.navigate("main")
+                }
+            ) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+            }
         }
     ) { innerPadding ->
         Column(
@@ -64,9 +81,19 @@ fun InfoScreen(
 
             // Back button
             Button(
-                onClick = { navController.navigate(backRoute) }
+                onClick = {
+                    val intent = Intent(Intent.ACTION_SENDTO).apply {
+                        data = Uri.parse("mailto:") // only email apps should handle this
+                        putExtra(Intent.EXTRA_EMAIL, arrayOf("alza.interactive@gmail.com"))
+                        putExtra(Intent.EXTRA_SUBJECT, "Feedback: Koksakata bahasa arab")
+                    }
+
+                    if (intent.resolveActivity(context.packageManager) != null) {
+                        context.startActivity(intent)
+                    }
+                }
             ) {
-                Text("Kembali")
+                Text("Kirim email")
             }
         }
     }
