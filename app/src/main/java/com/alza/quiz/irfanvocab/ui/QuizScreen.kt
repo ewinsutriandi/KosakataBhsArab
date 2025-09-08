@@ -176,7 +176,10 @@ fun QuizScreen(
                     Card {
                         Text(
                             text = level.questions[targetIndex].questionText,
-                            style = MaterialTheme.typography.headlineLarge.copy(fontSize = 51.sp),
+                            style = MaterialTheme.typography.headlineLarge.copy(
+                                fontSize = 47.sp,
+                                lineHeight = 55.sp
+                            ),
                             textAlign = TextAlign.Center,
                             modifier = Modifier
                                 .fillMaxWidth()
