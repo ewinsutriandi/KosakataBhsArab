@@ -118,7 +118,7 @@ fun QuizScreen(
                     Text(
                         text = "Jawaban salah",
                         style = MaterialTheme.typography.headlineMedium,
-                        color = OnErrorContainer,
+                        //color = OnErrorContainer,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth()
                     )

@@ -14,10 +14,9 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.outlined.Build
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -28,10 +27,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -40,7 +37,7 @@ import com.alza.quiz.irfanvocab.R
 import com.alza.quiz.irfanvocab.model.ExerciseModel
 import com.alza.quiz.irfanvocab.model.TransDirection
 import com.alza.quiz.irfanvocab.model.loadAndGenerateQuiz
-import com.alza.quiz.irfanvocab.ui.theme.Primary
+import com.alza.quiz.irfanvocab.model.trLevelNames
 import com.alza.quiz.irfanvocab.ui.theme.PrimaryContainer
 
 @Composable
@@ -56,22 +53,22 @@ fun MainScreen(
                 //contentColor = Color.Black
             ) {
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Info, contentDescription = "About") },
+                    icon = { Icon(Icons.Outlined.Info, contentDescription = "About") },
                     label = { Text("Tentang Aplikasi") },
                     selected = false,
-                    onClick = {  }
+                    onClick = { navController.navigate("info") }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Email, contentDescription = "Contact") },
-                    label = { Text("Kontak & Saran") },
+                    icon = { Icon(Icons.Outlined.Build, contentDescription = "Copyright & license") },
+                    label = { Text("Hak Cipta") },
                     selected = false,
-                    onClick = {  }
+                    onClick = { navController.navigate("copy") }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Contact") },
-                    label = { Text("Lainnya") },
+                    icon = { Icon(Icons.Outlined.ShoppingCart, contentDescription = "More") },
+                    label = { Text("Apps Lainnya") },
                     selected = false,
-                    onClick = {  }
+                    onClick = { navController.navigate("store") }
                 )
 
             }
@@ -129,6 +126,7 @@ fun MainScreen(
                                         numQuestions = 5
                                     )
                                     val questions = indToArQuestions + arToIndQuestions
+                                    val lvlName = trLevelNames[exerciseType]
                                     // Store the generated QuizLevel in the ViewModel
                                     viewModel.setQuizLevel(
                                         ExerciseModel(
@@ -137,13 +135,11 @@ fun MainScreen(
                                             exerciseType = exerciseType
                                             //totalQuestions = questions.size
                                         ),
-                                        title = "Kosakata"
+                                        title = "Latihan kosakata: $lvlName"
                                     )
                                     // Navigate to QuizScreen
                                     navController.navigate("quiz_screen")
-
                                 }
-
                             }
                         }
                     )

@@ -18,8 +18,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.alza.quiz.irfanvocab.model.ExerciseModel
+import com.alza.quiz.irfanvocab.ui.CopyrightScreen
+import com.alza.quiz.irfanvocab.ui.InfoScreen
 import com.alza.quiz.irfanvocab.ui.LevelSelectionScreen
 import com.alza.quiz.irfanvocab.ui.MainScreen
+import com.alza.quiz.irfanvocab.ui.MoreAppsScreen
 import com.alza.quiz.irfanvocab.ui.QuizScreen
 import com.alza.quiz.irfanvocab.ui.SharedQuizViewModel
 import com.alza.quiz.irfanvocab.ui.theme.BelajarKosakataArabTheme
@@ -44,6 +47,15 @@ fun AppNavigation() {
     NavHost(navController = navController, startDestination = "main") {
         composable("main") {
             MainScreen(navController = navController, viewModel = sharedViewModel)
+        }
+        composable("info") {
+            InfoScreen(navController = navController, backRoute = "main")
+        }
+        composable("copy") {
+            CopyrightScreen(navController = navController, backRoute = "main")
+        }
+        composable("store") {
+            MoreAppsScreen(navController = navController, backRoute = "main")
         }
         composable("level_selection") {
             LevelSelectionScreen(navController = navController, viewModel = sharedViewModel)

@@ -28,6 +28,15 @@ val trFiles = mapOf(
     ExerciseModel.ExerciseType.FRUITS to "fruits.json",
 )
 
+val trLevelNames = mapOf(
+    ExerciseModel.ExerciseType.ANIMALS to "hewan",
+    ExerciseModel.ExerciseType.APPARELS to "pakaian",
+    ExerciseModel.ExerciseType.BODY_PARTS to "bagian tubuh",
+    ExerciseModel.ExerciseType.COLORS to "warna",
+    ExerciseModel.ExerciseType.FAMILY to "anggota keluarga",
+    ExerciseModel.ExerciseType.FRUITS to "buah-buahan",
+)
+
 fun generateTranslationQuiz(direction: TransDirection,vocabList: List<Vocabulary>, numQuestions: Int, exerciseType: ExerciseModel.ExerciseType): List<QuizQuestion> {
     val questions = mutableListOf<QuizQuestion>()
     val shuffledVocab = vocabList.shuffled()
