@@ -11,6 +11,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+
 private val lightColorScheme = lightColorScheme(
     primary = Primary,
     onPrimary = OnPrimary,
@@ -62,6 +63,7 @@ private val darkColorScheme = darkColorScheme(
     onSurfaceVariant = OnSurfaceVariantDark,
     outline = OutlineDark
 )
+
 
 @Composable
 fun BelajarKosakataArabTheme(

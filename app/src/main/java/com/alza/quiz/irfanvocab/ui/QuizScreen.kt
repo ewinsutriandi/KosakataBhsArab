@@ -37,6 +37,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.alza.quiz.irfanvocab.model.ExerciseModel
 import com.alza.quiz.irfanvocab.ui.theme.OnErrorContainer
 import com.alza.quiz.irfanvocab.util.SoundUtil
 import com.alza.quiz.irfanvocab.util.StatsUtil
@@ -44,7 +45,7 @@ import com.alza.quiz.irfanvocab.util.StatsUtil
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QuizScreen(
-    onQuizCompleted: () -> Unit,
+    onQuizCompleted: (exerciseType: ExerciseModel.ExerciseType) -> Unit,
     viewModel: SharedQuizViewModel
 ) {
     val context = LocalContext.current
@@ -97,7 +98,7 @@ fun QuizScreen(
                             // Save stats before navigating back
                             StatsUtil.saveStats(context,level.exerciseType, level.levelId, correctAnswers, incorrectAnswers)
                             showSummaryDialog = false
-                            onQuizCompleted()
+                            onQuizCompleted(level.exerciseType)
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
@@ -262,7 +263,7 @@ fun QuizScreen(
                     Button(
                         onClick = {
                             showExitDialog = false
-                            onQuizCompleted()
+                            onQuizCompleted(level.exerciseType)
                         }
                     ) {
                         Text("Keluar")

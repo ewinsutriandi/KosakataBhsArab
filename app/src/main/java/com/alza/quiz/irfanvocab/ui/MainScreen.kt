@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -37,12 +38,17 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.alza.quiz.irfanvocab.R
 import com.alza.quiz.irfanvocab.model.ExerciseModel
+import com.alza.quiz.irfanvocab.model.TransDirection
+import com.alza.quiz.irfanvocab.model.loadAndGenerateQuiz
+import com.alza.quiz.irfanvocab.ui.theme.Primary
+import com.alza.quiz.irfanvocab.ui.theme.PrimaryContainer
 
 @Composable
 fun MainScreen(
     navController: NavController,
     viewModel: SharedQuizViewModel
 ) {
+    val context = LocalContext.current
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -74,7 +80,7 @@ fun MainScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color(0xFFB2EBF2))
+                //.background(Color(0xFFB2EBF2))
                 .padding(innerPadding)
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
@@ -106,7 +112,40 @@ fun MainScreen(
                 ) { exerciseType ->
                     VocabularyButton(
                         exerciseType = exerciseType,
-                        onClick = {  }
+                        onClick = {
+                            when (exerciseType){
+                                ExerciseModel.ExerciseType.NUMBERS -> navController.navigate("level_selection")
+                                else -> {
+                                    val arToIndQuestions = loadAndGenerateQuiz(
+                                        direction = TransDirection.ARABIC_TO_INDONESIAN,
+                                        context = context,
+                                        exerciseType = exerciseType,
+                                        numQuestions = 5
+                                    )
+                                    val indToArQuestions = loadAndGenerateQuiz(
+                                        direction = TransDirection.INDONESIAN_TO_ARABIC,
+                                        context = context,
+                                        exerciseType = exerciseType,
+                                        numQuestions = 5
+                                    )
+                                    val questions = indToArQuestions + arToIndQuestions
+                                    // Store the generated QuizLevel in the ViewModel
+                                    viewModel.setQuizLevel(
+                                        ExerciseModel(
+                                            levelId = 1,
+                                            questions = questions.shuffled(),
+                                            exerciseType = exerciseType
+                                            //totalQuestions = questions.size
+                                        ),
+                                        title = "Kosakata"
+                                    )
+                                    // Navigate to QuizScreen
+                                    navController.navigate("quiz_screen")
+
+                                }
+
+                            }
+                        }
                     )
                 }
             }
@@ -115,15 +154,17 @@ fun MainScreen(
 }
 
 @Composable
-fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType, onClick: () -> Unit) {
+fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType,
+                     onClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onClick() }
+            /*
             .background(
-                color = Color(0xFFFFCA28),
+                color = Primary,
                 shape = RoundedCornerShape(16.dp)
-            )
+            )*/
             .padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -141,7 +182,7 @@ fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType, onClick: () -> Un
             modifier = Modifier
                 .size(100.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(Color.White)
+                .background(PrimaryContainer)
                 .padding(8.dp)
         )
         Text(
@@ -154,10 +195,10 @@ fun VocabularyButton(exerciseType: ExerciseModel.ExerciseType, onClick: () -> Un
                 ExerciseModel.ExerciseType.FAMILY -> "Keluarga"
                 else -> exerciseType.name.lowercase().replaceFirstChar { it.titlecase() }
             },
-            style = MaterialTheme.typography.headlineSmall.copy(
+            style = MaterialTheme.typography.titleMedium.copy(
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF0288D1),
-                fontFamily = FontFamily.SansSerif
+                //color = Color(0xFF0288D1),
+                //fontFamily = FontFamily.SansSerif
             ),
             modifier = Modifier.padding(top = 8.dp)
         )

@@ -17,6 +17,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.alza.quiz.irfanvocab.model.ExerciseModel
 import com.alza.quiz.irfanvocab.ui.LevelSelectionScreen
 import com.alza.quiz.irfanvocab.ui.MainScreen
 import com.alza.quiz.irfanvocab.ui.QuizScreen
@@ -49,8 +50,11 @@ fun AppNavigation() {
         }
         composable("quiz_screen") {
             QuizScreen(
-                onQuizCompleted = {  ->
-                    navController.navigate("level_selection")
+                onQuizCompleted = { exerciseType ->
+                    when (exerciseType) {
+                        ExerciseModel.ExerciseType.NUMBERS -> navController.navigate("level_selection")
+                        else -> navController.navigate("main")
+                    }
                 },
                 viewModel = sharedViewModel
             )
