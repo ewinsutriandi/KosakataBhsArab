@@ -1,0 +1,74 @@
+[
+  {
+    "English": "Shirt",
+    "Arabic_Singular": "قَمِيصٌ",
+    "Arabic_Species_Collective": "قُمْصَانٌ",
+    "Indonesian": "Kemeja"
+  },
+  {
+    "English": "Pants",
+    "Arabic_Singular": "بَنْطَلُونٌ",
+    "Arabic_Species_Collective": "بَنَاطِيلُ",
+    "Indonesian": "Celana"
+  },
+  {
+    "English": "Dress",
+    "Arabic_Singular": "فُسْتَانٌ",
+    "Arabic_Species_Collective": "فَسَاتِينُ",
+    "Indonesian": "Gaun"
+  },
+  {
+    "English": "Shoes",
+    "Arabic_Singular": "حِذَاءٌ",
+    "Arabic_Species_Collective": "أَحْذِيَةٌ",
+    "Indonesian": "Sepatu"
+  },
+  {
+    "English": "Socks",
+    "Arabic_Singular": "جَوْرَبٌ",
+    "Arabic_Species_Collective": "جَوَارِبُ",
+    "Indonesian": "Kaus kaki"
+  },
+  {
+    "English": "Belt",
+    "Arabic_Singular": "حِزَامٌ",
+    "Arabic_Species_Collective": "أَحْزِمَةٌ",
+    "Indonesian": "Sabuk"
+  },
+  {
+    "English": "Scarf",
+    "Arabic_Singular": "وَشَاحٌ",
+    "Arabic_Species_Collective": "أَوْشِحَةٌ",
+    "Indonesian": "Syal"
+  },
+  {
+    "English": "Hat",
+    "Arabic_Singular": "قُبَّعَةٌ",
+    "Arabic_Species_Collective": "قُبَّعَاتٌ",
+    "Indonesian": "Topi"
+  },
+  {
+    "English": "Watch",
+    "Arabic_Singular": "سَاعَةٌ",
+    "Arabic_Species_Collective": "سَاعَاتٌ",
+    "Indonesian": "Jam tangan"
+  },
+  {
+    "English": "Glasses",
+    "Arabic_Singular": "نَظَّارَةٌ",
+    "Arabic_Species_Collective": "نَظَّارَاتٌ",
+    "Indonesian": "Kacamata"
+  },
+  {
+    "English": "Necklace",
+    "Arabic_Singular": "قِلَادَةٌ",
+    "Arabic_Species_Collective": "قَلَائِدُ",
+    "Indonesian": "Kalung"
+  },
+  {
+    "English": "Ring",
+    "Arabic_Singular": "خَاتَمٌ",
+    "Arabic_Species_Collective": "خَوَاتِمُ",
+    "Indonesian": "Cincin"
+  }
+]

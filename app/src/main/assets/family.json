@@ -1,0 +1,86 @@
+[
+  {
+    "English": "Father",
+    "Arabic_Singular": "أَبٌ",
+    "Arabic_Species_Collective": "آبَاءٌ",
+    "Indonesian": "Ayah"
+  },
+  {
+    "English": "Mother",
+    "Arabic_Singular": "أُمٌّ",
+    "Arabic_Species_Collective": "أُمَّهَاتٌ",
+    "Indonesian": "Ibu"
+  },
+  {
+    "English": "Brother",
+    "Arabic_Singular": "أَخٌ",
+    "Arabic_Species_Collective": "إِخْوَةٌ",
+    "Indonesian": "Saudara laki-laki"
+  },
+  {
+    "English": "Sister",
+    "Arabic_Singular": "أُخْتٌ",
+    "Arabic_Species_Collective": "أَخَوَاتٌ",
+    "Indonesian": "Saudara perempuan"
+  },
+  {
+    "English": "Son",
+    "Arabic_Singular": "اِبْنٌ",
+    "Arabic_Species_Collective": "أَبْنَاءٌ",
+    "Indonesian": "Anak laki-laki"
+  },
+  {
+    "English": "Daughter",
+    "Arabic_Singular": "اِبْنَةٌ",
+    "Arabic_Species_Collective": "بَنَاتٌ",
+    "Indonesian": "Anak perempuan"
+  },
+  {
+    "English": "Grandfather",
+    "Arabic_Singular": "جَدٌّ",
+    "Arabic_Species_Collective": "أَجْدَادٌ",
+    "Indonesian": "Kakek"
+  },
+  {
+    "English": "Grandmother",
+    "Arabic_Singular": "جَدَّةٌ",
+    "Arabic_Species_Collective": "جَدَّاتٌ",
+    "Indonesian": "Nenek"
+  },
+  {
+    "English": "Uncle",
+    "Arabic_Singular": "عَمٌّ",
+    "Arabic_Species_Collective": "أَعْمَامٌ",
+    "Indonesian": "Paman"
+  },
+  {
+    "English": "Aunt",
+    "Arabic_Singular": "عَمَّةٌ",
+    "Arabic_Species_Collective": "عَمَّاتٌ",
+    "Indonesian": "Bibi"
+  },
+  {
+    "English": "Cousin (Male)",
+    "Arabic_Singular": "اِبْنُ العَمِّ",
+    "Arabic_Species_Collective": "بَنُو العَمِّ",
+    "Indonesian": "Sepupu laki-laki"
+  },
+  {
+    "English": "Cousin (Female)",
+    "Arabic_Singular": "بِنْتُ العَمِّ",
+    "Arabic_Species_Collective": "بَنَاتُ العَمِّ",
+    "Indonesian": "Sepupu perempuan"
+  },
+  {
+    "English": "Nephew",
+    "Arabic_Singular": "اِبْنُ الأَخِ",
+    "Arabic_Species_Collective": "أَبْنَاءُ الإِخْوَةِ",
+    "Indonesian": "Keponakan laki-laki"
+  },
+  {
+    "English": "Niece",
+    "Arabic_Singular": "بِنْتُ الأَخِ",
+    "Arabic_Species_Collective": "بَنَاتُ الإِخْوَةِ",
+    "Indonesian": "Keponakan perempuan"
+  }
+]

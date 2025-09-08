@@ -1,0 +1,122 @@
+[
+  {
+    "English": "Doctor",
+    "Arabic_Singular": "طَبِيبٌ",
+    "Arabic_Species_Collective": "أَطِبَّاءٌ",
+    "Indonesian": "Dokter"
+  },
+  {
+    "English": "Teacher",
+    "Arabic_Singular": "مُعَلِّمٌ",
+    "Arabic_Species_Collective": "مُعَلِّمُونَ",
+    "Indonesian": "Guru"
+  },
+  {
+    "English": "Engineer",
+    "Arabic_Singular": "مُهَنْدِسٌ",
+    "Arabic_Species_Collective": "مُهَنْدِسُونَ",
+    "Indonesian": "Insinyur"
+  },
+  {
+    "English": "Farmer",
+    "Arabic_Singular": "فَلَّاحٌ",
+    "Arabic_Species_Collective": "فَلَّاحُونَ",
+    "Indonesian": "Petani"
+  },
+  {
+    "English": "Nurse",
+    "Arabic_Singular": "مُمَرِّضَةٌ",
+    "Arabic_Species_Collective": "مُمَرِّضَاتٌ",
+    "Indonesian": "Perawat"
+  },
+  {
+    "English": "Police Officer",
+    "Arabic_Singular": "ضَابِطُ شُرْطَةٍ",
+    "Arabic_Species_Collective": "ضُبَّاطُ شُرْطَةٍ",
+    "Indonesian": "Polisi"
+  },
+  {
+    "English": "Firefighter",
+    "Arabic_Singular": "رَجُلُ إِطْفَاءٍ",
+    "Arabic_Species_Collective": "رِجَالُ إِطْفَاءٍ",
+    "Indonesian": "Pemadam kebakaran"
+  },
+  {
+    "English": "Chef",
+    "Arabic_Singular": "طَبَّاخٌ",
+    "Arabic_Species_Collective": "طَبَّاخُونَ",
+    "Indonesian": "Koki"
+  },
+  {
+    "English": "Driver",
+    "Arabic_Singular": "سَائِقٌ",
+    "Arabic_Species_Collective": "سَائِقُونَ",
+    "Indonesian": "Sopir"
+  },
+  {
+    "English": "Shopkeeper",
+    "Arabic_Singular": "بَائِعٌ",
+    "Arabic_Species_Collective": "بَائِعُونَ",
+    "Indonesian": "Pedagang"
+  },
+  {
+    "English": "Fisherman",
+    "Arabic_Singular": "صَيَّادٌ سَمَكٍ",
+    "Arabic_Species_Collective": "صَيَّادُو سَمَكٍ",
+    "Indonesian": "Nelayan"
+  },
+  {
+    "English": "Scientist",
+    "Arabic_Singular": "عَالِمٌ",
+    "Arabic_Species_Collective": "عُلَمَاءٌ",
+    "Indonesian": "Ilmuwan"
+  },
+  {
+    "English": "Lawyer",
+    "Arabic_Singular": "مُحَامٍ",
+    "Arabic_Species_Collective": "مُحَامُونَ",
+    "Indonesian": "Pengacara"
+  },
+  {
+    "English": "Architect",
+    "Arabic_Singular": "مِعْمَارِيٌّ",
+    "Arabic_Species_Collective": "مِعْمَارِيُّونَ",
+    "Indonesian": "Arsitek"
+  },
+  {
+    "English": "Pilot",
+    "Arabic_Singular": "طَيَّارٌ",
+    "Arabic_Species_Collective": "طَيَّارُونَ",
+    "Indonesian": "Pilot"
+  },
+  {
+    "English": "Journalist",
+    "Arabic_Singular": "صَحَفِيٌّ",
+    "Arabic_Species_Collective": "صَحَفِيُّونَ",
+    "Indonesian": "Wartawan"
+  },
+  {
+    "English": "Carpenter",
+    "Arabic_Singular": "نَجَّارٌ",
+    "Arabic_Species_Collective": "نَجَّارُونَ",
+    "Indonesian": "Tukang kayu"
+  },
+  {
+    "English": "Tailor",
+    "Arabic_Singular": "خَيَّاطٌ",
+    "Arabic_Species_Collective": "خَيَّاطُونَ",
+    "Indonesian": "Penjahit"
+  },
+  {
+    "English": "Artist",
+    "Arabic_Singular": "فَنَّانٌ",
+    "Arabic_Species_Collective": "فَنَّانُونَ",
+    "Indonesian": "Seniman"
+  },
+  {
+    "English": "Soldier",
+    "Arabic_Singular": "جُنْدِيٌّ",
+    "Arabic_Species_Collective": "جُنُودٌ",
+    "Indonesian": "Tentara"
+  }
+]

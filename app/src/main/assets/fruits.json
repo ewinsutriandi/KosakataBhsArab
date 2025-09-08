@@ -1,0 +1,80 @@
+[
+  {
+    "English": "Apple",
+    "Arabic_Singular": "تُفَّاحَةٌ",
+    "Arabic_Species_Collective": "تُفَّاحٌ",
+    "Indonesian": "Apel"
+  },
+  {
+    "English": "Banana",
+    "Arabic_Singular": "مَوْزَةٌ",
+    "Arabic_Species_Collective": "مَوْزٌ",
+    "Indonesian": "Pisang"
+  },
+  {
+    "English": "Orange",
+    "Arabic_Singular": "بُرْتُقَالَةٌ",
+    "Arabic_Species_Collective": "بُرْتُقَالٌ",
+    "Indonesian": "Jeruk"
+  },
+  {
+    "English": "Mango",
+    "Arabic_Singular": "مَانْجُو",
+    "Arabic_Species_Collective": "مَانْجُو",
+    "Indonesian": "Mangga"
+  },
+  {
+    "English": "Pineapple",
+    "Arabic_Singular": "أَنَانَاسَةٌ",
+    "Arabic_Species_Collective": "أَنَانَاسٌ",
+    "Indonesian": "Nanas"
+  },
+  {
+    "English": "Watermelon",
+    "Arabic_Singular": "بِطِّيخَةٌ",
+    "Arabic_Species_Collective": "بِطِّيخٌ",
+    "Indonesian": "Semangka"
+  },
+  {
+    "English": "Grape",
+    "Arabic_Singular": "عِنَبَةٌ",
+    "Arabic_Species_Collective": "عِنَبٌ",
+    "Indonesian": "Anggur"
+  },
+  {
+    "English": "Strawberry",
+    "Arabic_Singular": "فَرَاوِلَةٌ",
+    "Arabic_Species_Collective": "فَرَاوِلٌ",
+    "Indonesian": "Stroberi"
+  },
+  {
+    "English": "Durian",
+    "Arabic_Singular": "دُورِيَانٌ",
+    "Arabic_Species_Collective": "دُورِيَانٌ",
+    "Indonesian": "Durian"
+  },
+  {
+    "English": "Date",
+    "Arabic_Singular": "تَمْرَةٌ",
+    "Arabic_Species_Collective": "تَمْرٌ",
+    "Indonesian": "Kurma"
+  },
+  {
+    "English": "Pomegranate",
+    "Arabic_Singular": "رُمَّانَةٌ",
+    "Arabic_Species_Collective": "رُمَّانٌ",
+    "Indonesian": "Delima"
+  },
+  {
+    "English": "Melon",
+    "Arabic_Singular": "بِطِّيخَةٌ شَامِيَّةٌ",
+    "Arabic_Species_Collective": "بِطِّيخٌ شَامِيٌّ",
+    "Indonesian": "Melon"
+  },
+  {
+    "English": "Peach",
+    "Arabic_Singular": "خَوْخَةٌ",
+    "Arabic_Species_Collective": "خَوْخٌ",
+    "Indonesian": "Persik"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "English": "Book",
+    "Arabic_Singular": "كِتَابٌ",
+    "Arabic_Species_Collective": "كُتُبٌ",
+    "Indonesian": "Buku"
+  },
+  {
+    "English": "Pen",
+    "Arabic_Singular": "قَلَمٌ",
+    "Arabic_Species_Collective": "أَقْلَامٌ",
+    "Indonesian": "Pena"
+  },
+  {
+    "English": "Classroom",
+    "Arabic_Singular": "فَصْلٌ",
+    "Arabic_Species_Collective": "فُصُولٌ",
+    "Indonesian": "Kelas"
+  },
+  {
+    "English": "Pencil",
+    "Arabic_Singular": "قَلَمُ رَصَاصٍ",
+    "Arabic_Species_Collective": "أَقْلَامُ رَصَاصٍ",
+    "Indonesian": "Pensil"
+  },
+  {
+    "English": "Notebook",
+    "Arabic_Singular": "دَفْتَرٌ",
+    "Arabic_Species_Collective": "دَفَاتِرُ",
+    "Indonesian": "Buku catatan"
+  },
+  {
+    "English": "Desk",
+    "Arabic_Singular": "مَكْتَبٌ",
+    "Arabic_Species_Collective": "مَكَاتِبُ",
+    "Indonesian": "Meja"
+  },
+  {
+    "English": "Chair",
+    "Arabic_Singular": "كُرْسِيٌّ",
+    "Arabic_Species_Collective": "كَرَاسِيُّ",
+    "Indonesian": "Kursi"
+  },
+  {
+    "English": "Bag",
+    "Arabic_Singular": "حَقِيبَةٌ",
+    "Arabic_Species_Collective": "حَقَائِبُ",
+    "Indonesian": "Tas"
+  },
+  {
+    "English": "Ruler",
+    "Arabic_Singular": "مِسْطَرَةٌ",
+    "Arabic_Species_Collective": "مَسَاطِرُ",
+    "Indonesian": "Penggaris"
+  },
+  {
+    "English": "Eraser",
+    "Arabic_Singular": "مِمْحَاةٌ",
+    "Arabic_Species_Collective": "مَمَاحٍ",
+    "Indonesian": "Penghapus"
+  },
+  {
+    "English": "Blackboard",
+    "Arabic_Singular": "سَبُّورَةٌ",
+    "Arabic_Species_Collective": "سَبُّورَاتٌ",
+    "Indonesian": "Papan tulis"
+  },
+  {
+    "English": "Paper",
+    "Arabic_Singular": "وَرَقَةٌ",
+    "Arabic_Species_Collective": "أَوْرَاقٌ",
+    "Indonesian": "Kertas"
+  },
+  {
+    "English": "Scissors",
+    "Arabic_Singular": "مِقَصٌّ",
+    "Arabic_Species_Collective": "مَقَاصُّ",
+    "Indonesian": "Gunting"
+  },
+  {
+    "English": "School",
+    "Arabic_Singular": "مَدْرَسَةٌ",
+    "Arabic_Species_Collective": "مَدَارِسُ",
+    "Indonesian": "Sekolah"
+  },
+  {
+    "English": "Chalk",
+    "Arabic_Singular": "طَبَاشِيرٌ",
+    "Arabic_Species_Collective": "طَبَاشِيرٌ",
+    "Indonesian": "Kapur"
+  }
+]

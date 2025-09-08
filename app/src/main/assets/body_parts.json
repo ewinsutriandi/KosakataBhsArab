@@ -1,0 +1,104 @@
+[
+  {
+    "English": "Head",
+    "Arabic_Singular": "رَأْسٌ",
+    "Arabic_Species_Collective": "رُؤُوسٌ",
+    "Indonesian": "Kepala"
+  },
+  {
+    "English": "Eye",
+    "Arabic_Singular": "عَيْنٌ",
+    "Arabic_Species_Collective": "أَعْيُنٌ",
+    "Indonesian": "Mata"
+  },
+  {
+    "English": "Ear",
+    "Arabic_Singular": "أُذُنٌ",
+    "Arabic_Species_Collective": "آذَانٌ",
+    "Indonesian": "Telinga"
+  },
+  {
+    "English": "Nose",
+    "Arabic_Singular": "أَنْفٌ",
+    "Arabic_Species_Collective": "أُنُوفٌ",
+    "Indonesian": "Hidung"
+  },
+  {
+    "English": "Mouth",
+    "Arabic_Singular": "فَمٌ",
+    "Arabic_Species_Collective": "أَفْوَاهٌ",
+    "Indonesian": "Mulut"
+  },
+  {
+    "English": "Hand",
+    "Arabic_Singular": "يَدٌ",
+    "Arabic_Species_Collective": "أَيْدٍ",
+    "Indonesian": "Tangan"
+  },
+  {
+    "English": "Foot",
+    "Arabic_Singular": "قَدَمٌ",
+    "Arabic_Species_Collective": "أَقْدَامٌ",
+    "Indonesian": "Kaki"
+  },
+  {
+    "English": "Arm",
+    "Arabic_Singular": "ذِرَاعٌ",
+    "Arabic_Species_Collective": "أَذْرُعٌ",
+    "Indonesian": "Lengan"
+  },
+  {
+    "English": "Leg",
+    "Arabic_Singular": "رِجْلٌ",
+    "Arabic_Species_Collective": "أَرْجُلٌ",
+    "Indonesian": "Kaki"
+  },
+  {
+    "English": "Heart",
+    "Arabic_Singular": "قَلْبٌ",
+    "Arabic_Species_Collective": "قُلُوبٌ",
+    "Indonesian": "Jantung"
+  },
+  {
+    "English": "Stomach",
+    "Arabic_Singular": "مَعِدَةٌ",
+    "Arabic_Species_Collective": "مَعِدٌ",
+    "Indonesian": "Perut"
+  },
+  {
+    "English": "Eyebrow",
+    "Arabic_Singular": "حَاجِبٌ",
+    "Arabic_Species_Collective": "حَوَاجِبُ",
+    "Indonesian": "Alis"
+  },
+  {
+    "English": "Moustache",
+    "Arabic_Singular": "شَارِبٌ",
+    "Arabic_Species_Collective": "شَوَارِبُ",
+    "Indonesian": "Kumis"
+  },
+  {
+    "English": "Beard",
+    "Arabic_Singular": "لِحْيَةٌ",
+    "Arabic_Species_Collective": "لِحًى",
+    "Indonesian": "Jenggot"
+  },
+  {
+    "English": "Nail",
+    "Arabic_Singular": "ظُفْرٌ",
+    "Arabic_Species_Collective": "أَظْفَارٌ",
+    "Indonesian": "Kuku"
+  },
+  {
+    "English": "Hair",
+    "Arabic_Singular": "شَعْرٌ",
+    "Arabic_Species_Collective": "شَعْرٌ",
+    "Indonesian": "Rambut"
+  },
+  {
+    "English": "Neck",
+    "Arabic_Singular": "رَقَبَةٌ",
+    "Arabic_Species_Collective": "رَقَبَاتٌ",
+    "Indonesian": "Leher"
+  }
+]

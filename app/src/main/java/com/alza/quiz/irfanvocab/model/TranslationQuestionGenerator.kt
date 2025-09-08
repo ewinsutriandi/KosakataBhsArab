@@ -42,7 +42,7 @@ fun generateTranslationQuiz(direction: TransDirection,vocabList: List<Vocabulary
 
         when (direction) {
             TransDirection.ARABIC_TO_INDONESIAN -> {
-                questionText = vocab.arabicPlural
+                questionText = vocab.arabicSingular
                 correctAnswer = vocab.Indonesian
                 choices.add(correctAnswer)
                 while (choices.size < 4) {
@@ -54,7 +54,7 @@ fun generateTranslationQuiz(direction: TransDirection,vocabList: List<Vocabulary
             }
             TransDirection.INDONESIAN_TO_ARABIC -> {
                 questionText = vocab.Indonesian
-                correctAnswer = vocab.arabicPlural
+                correctAnswer = vocab.arabicSingular
                 choices.add(correctAnswer)
                 while (choices.size < 4) {
                     val randomVocab = shuffledVocab.random()

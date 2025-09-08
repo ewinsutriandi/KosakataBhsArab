@@ -1,0 +1,56 @@
+[
+  {
+    "English": "Red",
+    "Arabic_Singular": "أَحْمَرُ",
+    "Arabic_Species_Collective": "حُمْرٌ",
+    "Indonesian": "Merah"
+  },
+  {
+    "English": "Blue",
+    "Arabic_Singular": "أَزْرَقُ",
+    "Arabic_Species_Collective": "زُرْقٌ",
+    "Indonesian": "Biru"
+  },
+  {
+    "English": "Green",
+    "Arabic_Singular": "أَخْضَرُ",
+    "Arabic_Species_Collective": "خُضْرٌ",
+    "Indonesian": "Hijau"
+  },
+  {
+    "English": "Yellow",
+    "Arabic_Singular": "أَصْفَرُ",
+    "Arabic_Species_Collective": "صُفْرٌ",
+    "Indonesian": "Kuning"
+  },
+  {
+    "English": "Black",
+    "Arabic_Singular": "أَسْوَدُ",
+    "Arabic_Species_Collective": "سُودٌ",
+    "Indonesian": "Hitam"
+  },
+  {
+    "English": "White",
+    "Arabic_Singular": "أَبْيَضُ",
+    "Arabic_Species_Collective": "بِيضٌ",
+    "Indonesian": "Putih"
+  },
+  {
+    "English": "Purple",
+    "Arabic_Singular": "أَرْجُوَانِيٌّ",
+    "Arabic_Species_Collective": "أَرْجُوَانٌ",
+    "Indonesian": "Ungu"
+  },
+  {
+    "English": "Orange",
+    "Arabic_Singular": "بُرْتُقَالِيٌّ",
+    "Arabic_Species_Collective": "بُرْتُقَالٌ",
+    "Indonesian": "Oranye"
+  },
+  {
+    "English": "Brown",
+    "Arabic_Singular": "بُنِّيٌّ",
+    "Arabic_Species_Collective": "بُنٌّ",
+    "Indonesian": "Cokelat"
+  }
+]
