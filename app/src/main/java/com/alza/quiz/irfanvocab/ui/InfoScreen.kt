@@ -2,6 +2,7 @@ package com.alza.quiz.irfanvocab.ui
 
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -84,13 +85,16 @@ fun InfoScreen(
             Button(
                 onClick = {
                     val intent = Intent(Intent.ACTION_SENDTO).apply {
-                        data = "mailto:".toUri() // only email apps should handle this
-                        putExtra(Intent.EXTRA_EMAIL, arrayOf("alza.interactive@gmail.com"))
-                        putExtra(Intent.EXTRA_SUBJECT, "Feedback: Kosakata bahasa arab")
+                        data = ("mailto:alza.interactive@gmail.com?" +
+                                "&subject=" + Uri.encode("Feedback: Kosakata bahasa arab") +
+                                "&body=" + Uri.encode("ganti teks ini dengan pesan anda")).toUri()
                     }
-
-                    if (intent.resolveActivity(context.packageManager) != null) {
+                    try {
                         context.startActivity(intent)
+                    } catch (e: Exception) {
+                        Toast.makeText(context,"Perangkat anda tidak memiliki email client",
+                            Toast.LENGTH_LONG).show();
+                        println(e.message)
                     }
                 }
             ) {
