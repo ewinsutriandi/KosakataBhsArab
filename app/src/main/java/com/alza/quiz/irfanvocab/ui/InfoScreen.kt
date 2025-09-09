@@ -42,7 +42,7 @@ fun InfoScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navController.navigate("main")
+                    navController.navigate(backRoute)
                 }
             ) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
